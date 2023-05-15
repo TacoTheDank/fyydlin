@@ -1,11 +1,11 @@
 #!/bin/sh
 
-if [[ ! -f wiremock-standalone-2.19.0.jar ]] ; then
-    echo wiremock-standalone-2.19.0.jar does not exist!
+if [[ ! -f wiremock-standalone-2.27.2.jar ]] ; then
+    echo wiremock-standalone-2.27.2.jar does not exist!
     exit
 fi
 
-java -jar wiremock-standalone-2.19.0.jar --proxy-all="https://api.fyyd.de/0.2/" --record-mappings --verbose &
+java -jar wiremock-standalone-2.27.2.jar --proxy-all="https://api.fyyd.de/0.2/" --record-mappings --verbose &
 
 sleep 5
 

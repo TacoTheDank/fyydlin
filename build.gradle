@@ -1,10 +1,12 @@
 buildscript {
-    ext.kotlin_version = '1.8.21'
-    ext.retrofit_version = '2.9.0'
-    ext.moshi_version = '1.7.0'
-    ext.junit_version = '5.2.0'
-    ext.wiremock_version = '2.19.0'
-    ext.awaitility_version = '3.1.5'
+    ext {
+        kotlin_version = '1.8.21'
+        retrofit_version = '2.9.0'
+        moshi_version = '1.15.0'
+        junit_version = '4.13.2'
+        wiremock_version = '2.27.2'
+        awaitility_version = '4.2.0'
+    }
     repositories {
         mavenCentral()
     }
@@ -25,14 +27,13 @@ repositories {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
-    implementation "io.reactivex.rxjava3:rxjava:3.0.11"
+    implementation "io.reactivex.rxjava3:rxjava:3.1.6"
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:adapter-rxjava3:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
     implementation "com.squareup.moshi:moshi-adapters:$moshi_version"
 
     testImplementation "org.awaitility:awaitility:$awaitility_version"
-    testImplementation "org.junit.jupiter:junit-jupiter-api:$junit_version"
-    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junit_version"
+    testImplementation "junit:junit:$junit_version"
     testImplementation "com.github.tomakehurst:wiremock:$wiremock_version"
 }
