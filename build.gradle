@@ -1,12 +1,12 @@
 buildscript {
-    ext.kotlin_version = '1.2.61'
+    ext.kotlin_version = '1.8.21'
     ext.retrofit_version = '2.9.0'
     ext.moshi_version = '1.7.0'
     ext.junit_version = '5.2.0'
     ext.wiremock_version = '2.19.0'
     ext.awaitility_version = '3.1.5'
     repositories {
-        jcenter()
+        mavenCentral()
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
@@ -19,7 +19,7 @@ apply plugin: 'kotlin'
 apply plugin: 'idea'
 
 repositories {
-    jcenter()
+    mavenCentral()
 }
 
 dependencies {
@@ -31,8 +31,8 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
     implementation "com.squareup.moshi:moshi-adapters:$moshi_version"
 
-    testCompile "org.awaitility:awaitility:$awaitility_version"
+    testImplementation "org.awaitility:awaitility:$awaitility_version"
     testImplementation "org.junit.jupiter:junit-jupiter-api:$junit_version"
-    testRuntime "org.junit.jupiter:junit-jupiter-engine:$junit_version"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junit_version"
     testImplementation "com.github.tomakehurst:wiremock:$wiremock_version"
 }
